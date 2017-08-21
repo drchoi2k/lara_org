@@ -16,7 +16,7 @@
                 background-color: #333;
                 color: #fff;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-weight: 110;
                 height: 100vh;
                 margin: 0;
             }
