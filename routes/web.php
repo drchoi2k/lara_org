@@ -28,4 +28,4 @@ Route::get('/menu', [
     'as' => 'root',
     'uses' => 'menuController@index',
 ]);
-
+Route::get('/getInsert','CrudController@getInsert');
