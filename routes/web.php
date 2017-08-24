@@ -19,13 +19,13 @@ Route::get('/', [
     'uses' => 'WelcomeController@index',
 ]);
 
-Route::get('/index', [
-    'as' => 'root',
-    'uses' => 'indexController@index',
-]);
+// Route::get('/index', [
+//     'as' => 'root',
+//     'uses' => 'indexController@index',
+// ]);
 
-Route::get('/menu', [
-    'as' => 'root',
-    'uses' => 'menuController@index',
-]);
+// Route::get('/menu', [
+//     'as' => 'root',
+//     'uses' => 'menuController@index',
+// ]);
 Route::get('/getInsert','CrudController@getInsert');

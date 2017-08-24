@@ -73,7 +73,7 @@ ubuntu PHP install
 
 =======================mysql install
 ⓐ sudo apt-get install mysql-server
-              ==>반드시 6자리이상 암호설정 230700
+              ==>반드시 6자리이상 암호설정 
 ⓑ sudo apt-get install mysql-client
 ⓒ sudo apt-get install php7.0 libapache2-mod-php7.0 php-mcrypt php-mysql php-mbstring php7.0-mbstring php-gettext
 ⓓ sudo nano /etc/apache2/mods-enabled/dir.conf
@@ -143,9 +143,15 @@ ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
 
     $$$$$$$$$$$$$$$$$$$$$$$$$=============우분투에서 public/index.html로 연결 
 $ cd /etc/apache2/sites-available
-$ sudo chmode -R 000-default.conf 
+$ sudo chmod -R 777 /etc/apache2/sites-available/000-default.conf 
 $ nano /etc/apache2/sites-available/000-default.conf
      edit안에서 DocumentRoot /var/www/html/myapp/public 으로 수정
+$ sudo systemctl restart apache2
+$ sudo chmod -R 777 storage bootstrap/cache public/files
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
 &&&&&&&&&&&&&&&&&&&&&&&&&& WINDOWS의 Xampp에서 public/index.html로 연결
 C:\Xampp\apache\conf\httpd.conf 안에 (panel에서 confog를 눌러 수정함)
 
@@ -155,7 +161,7 @@ C:\Xampp\apache\conf\httpd.conf 안에 (panel에서 confog를 눌러 수정함)
 DocumentRoot "C:\Sites\lara\public"
 <Directory "C:\Sites\lara\public">   로 변경
 다음 아파치 재부팅
-
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
 
@@ -170,18 +176,21 @@ $ sudo php composer.phar create-project --prefer-dist laravel/laravel /var/www/h
 git clone https://github.com/laravel/laravel.git /var/www/html/choi 
 git clone https://github.com/laravel/laravel.git myfolder
 cp .env.example .env
-composer install
+sudo composer install
 php artisan key:generate 
+
+
 
 또는
 composer create-project --prefer-dist laravel/laravel myfolder
-
+또는 
+root폴더에서 html>laravel new laravel5.4 
 
 =================MYAPP install (응용 코드 인스톨:필요시)
 https://github.com/appkr/l5code/blob/master/readme.md 참조시
 <linux>
 sudo apt install git
-sudo git clone https://github.com/appkr/l5code.git myapp               프로그램 코드 다운 
+sudo git clone https://github.com/drchoi2k/lara_org.git myapp               프로그램 코드 다운 
 cd myapp
 @~/myapp $ git checkout master                     프로젝트의 의존성 설치
 @~/myapp $ sudo apt install composer
