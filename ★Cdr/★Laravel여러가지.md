@@ -6,6 +6,8 @@ routes촐더 안에 wep.php 와 상기 controller와 연결됨
 3. php artisan make:model Xxxxxxx
 4. 
 
+
+//:db table migration
 php artisan make:migration create_user_table --create=user
 ===================2017_08_24_231647_create_user_table.php
 <?php
@@ -46,7 +48,7 @@ class CreateUserTable extends Migration
     }
 }
 
-
+//:db migrate
 php artisan migrate
 
 php artisan make:seeder RolesTableSeeder
@@ -88,6 +90,9 @@ class Role extends Model
 }
 
 
+//:db data seeding
+php artisan db:seed
 php artisan db:seed --class=RolesTableSeeder
 
-php artisan migrate:refresh --seed            //:db data delete
+//:db data delete
+php artisan migrate:refresh --seed            
