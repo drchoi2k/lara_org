@@ -14,18 +14,33 @@
 // Route::get('/', function () {
 //     return view('index');
 // });
-Route::get('/', [
-    'as' => 'root',
-    'uses' => 'WelcomeController@index',
-]);
-
-// Route::get('/index', [
+// Route::get('/', [
 //     'as' => 'root',
-//     'uses' => 'indexController@index',
+//     'uses' => 'WelcomeController@index',
 // ]);
+
+Route::get('/','UserController@index');
+Route::get('/aws','UserController@aws');
+
+// 1방법
+// Route::get('/aws', [
+//     'as' => 'root',
+//     'uses' => 'AwsController@index',
+// ]);
+
+// 2방법
+// Route::get('/aws','AwsController@index');
+
+// 3방법
+// AwsController가 필요없음
+// Route::get('aws', function(){
+// 	return view('aws_area.aws');
+// });
 
 // Route::get('/menu', [
 //     'as' => 'root',
 //     'uses' => 'menuController@index',
 // ]);
+
+
 Route::get('/getInsert','CrudController@getInsert');
