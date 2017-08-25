@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class UserController extends Controller
 {
      public function index() {
@@ -15,4 +15,20 @@ class UserController extends Controller
         return view('aws_area.aws')->with('data',$data);
 	}
 
-}
+	public function getuser()
+	// public function getuser($id)
+    {
+        $users = DB::table('users')->get();
+        
+        //테이블 확인 localhost/getuser
+        // dd($users);
+        // dump($users); 
+        
+        // index.blade.php 로 넘김  
+        $user = DB::table('users')->where('id',5) ->first();  
+        dump($users);
+        // dump($user);
+        return view('user.index', ['users' => $users, 'singleUser' => $user]);
+    }
+
+} 
