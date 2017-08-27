@@ -15,6 +15,9 @@ class UserController extends Controller
         return view('aws_area.aws')->with('data',$data);
 	}
 
+
+
+
 	public function getuser()
 	// public function getuser($id)
     {
@@ -31,12 +34,60 @@ class UserController extends Controller
         return view('user.index', ['users' => $users, 'singleUser' => $user]);
     }
 
+
+
+
     public function union()
     {
-        $users = DB::table('users')->select('name');
-        $union = DB::table('roles')->select('name')->unionAll($users) ->get();
-
+    // role와 user출력
+        // $users = DB::table('users')->select('name');
+        // $union = DB::table('roles')->select('name')->unionAll($users) ->get();
+        // return view('union.union', compact('union'));
+    // user와 role출력
+        $roles = DB::table('roles')->select('name');
+        $union = DB::table('users')->select('name')->unionAll($roles) ->get();
         return view('union.union', compact('union'));
+
+    // ROLE만 출력
+        // $roles = DB::table('roles')->select('name')->get();
+        // return view('union.union', compact('roles'));
+
+    // U전체 출력   
+        // $users = DB::table('users')->get();
+        // $roles = DB::table('roles')->select('name')->get();
+        // dump($roles);
+        // // $email = DB::table('users')->select('email')->get();
+        // return view('union.union', ['users' => $users, 'roles' => $roles]);
+
+    }
+
+
+
+
+    public function all_list()
+    {
+    // role와 user출력
+        // $users = DB::table('users')->select('name');
+        // $union = DB::table('roles')->select('name')->unionAll($users) ->get();
+        // return view('union.union', compact('union'));
+    // user와 role출력
+        // $roles = DB::table('roles')->select('name');
+        // $union = DB::table('users')->select('name')->unionAll($roles) ->get();
+        // return view('union.union', compact('union'));
+
+    // ROLE만 출력
+        // $roles = DB::table('roles')->select('name')->get();
+        // return view('union.union', compact('roles'));
+
+    // U전체 출력   
+        $users = DB::table('users')->get();
+       
+        // $roles = DB::table('roles')->select('name')->get();
+        // dump($roles);
+        // $email = DB::table('users')->select('email')->get();
+        return view('board.all_list', compact('users'));
+        // return view('board.all_list', ['users' => $users, 'roles' => $roles]);        
+
     }
 
 } 
