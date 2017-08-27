@@ -22,6 +22,8 @@
 Route::get('/','UserController@index');
 Route::get('/aws','UserController@aws');
 Route::get('/getuser','UserController@getuser');
+Route::get('/union','UserController@union');
+
 // Route::get('/getuser/{id}','UserController@getuser');
 // 1방법
 // Route::get('/aws', [

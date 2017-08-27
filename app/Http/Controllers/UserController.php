@@ -26,9 +26,17 @@ class UserController extends Controller
         
         // index.blade.php 로 넘김  
         $user = DB::table('users')->where('id',5) ->first();  
-        dump($users);
+        // dump($users);
         // dump($user);
         return view('user.index', ['users' => $users, 'singleUser' => $user]);
+    }
+
+    public function union()
+    {
+        $users = DB::table('users')->select('name');
+        $union = DB::table('roles')->select('name')->unionAll($users) ->get();
+
+        return view('union.union', compact('union'));
     }
 
 } 
