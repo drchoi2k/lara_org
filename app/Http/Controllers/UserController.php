@@ -80,8 +80,8 @@ class UserController extends Controller
         // return view('union.union', compact('roles'));
 
     // U전체 출력   
-        $users = DB::table('users')->get();
-       
+        // $users = DB::table('users')->get();
+        $users =DB::table('users')->paginate(5);
         // $roles = DB::table('roles')->select('name')->get();
         // dump($roles);
         // $email = DB::table('users')->select('email')->get();
