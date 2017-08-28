@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Union</title>
+		<title>회 원 목 록</title>
 		<link href="css/aws.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<H1>PAGINATION lARAVEL</H1>
+		<h1>회 원 목 록</h1>
 		<table class="list">
 			@foreach($users as $un)
 			<tr>
 				<td>{{ $un -> role_id }} </td>
-				<td>&nbsp;&nbsp;</td>
 				<td>{{ $un -> name }} </td>
-				<td>&nbsp;&nbsp;</td>
 				<td>{{ $un -> email }} </td>
-				<td>&nbsp;&nbsp;</td>
 				<td>{{ $un -> created_at }}</td>
-				<td>&nbsp;&nbsp;</td>
 				<td>{{ $un -> updated_at }} </td>
 			</tr>
 			@endforeach
 		</table>
 		<hr>
-		{{ $users -> render() }}
+		<ul class="posi">{{ $users -> render() }}</ul>
 	</body>
 </html>
