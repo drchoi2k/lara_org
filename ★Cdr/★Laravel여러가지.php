@@ -155,6 +155,33 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+//==========DB관련 명령
+// web.php
+Route::get('/all_list','UserController@all_list');
+
+$users = DB::table('users')->get();
+return view('board.all_list', compact('users'));
+
+$users = DB::table('users')->get();
+$user = DB::table('users')->where('id',5) ->first();
+return view('user.index', ['users' => $users, 'singleUser' => $user]);
+
+$roles = DB::table('roles')->select('name');
+$union = DB::table('users')->select('name')->unionAll($roles) ->get();
+return view('union.union', compact('union'));
+
+// xxxxx.blade.php
+<table class="list">
+	@foreach($users as $un)
+		<tr>
+			<td>{{ $un -> role_id }} </td>
+		</tr>
+	@endforeach
+</table>
+
+
+
+
 
 
 
