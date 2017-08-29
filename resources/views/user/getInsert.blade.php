@@ -21,7 +21,7 @@
 		<div class="container">
 			<h1> New User Insert </h1>
 			<hr>
-			<form action="{{ url('posrInsert')}}" method="POST">
+			<form action="{{ url('postInsert') }}" method="POST">
 				{{ csrf_field() }}
 				<table>
 					<tr>
@@ -33,7 +33,7 @@
 					<tr>
 						<td>Email</td>
 						<td>
-							<input type="email" name="email" id="email" >
+	  						<input type="email" name="email" id="email">
 						</td>
 					</tr>
 					<tr>

@@ -27,9 +27,7 @@ Route::get('/all_list','UserController@all_list');
 Route::get('/pagination','PaginationController@pagination');
 Route::get('/xedb','UserController@xedb');
 Route::get('/getInsert','CrudController@getInsert');
-Route::get('/postInsert','CrudController@postInsert');
-
-
+Route::post('/postInsert','CrudController@postInsert');
 
 // Route::get('/getuser/{id}','UserController@getuser');
 // 1방법
@@ -45,11 +43,9 @@ Route::get('/postInsert','CrudController@postInsert');
 // AwsController가 필요없음
 // Route::get('aws', function(){
 // 	return view('aws_area.aws');
-// });
+// }); 
 
 // Route::get('/menu', [
 //     'as' => 'root',
 //     'uses' => 'menuController@index',
 // ]);
-
-?>
