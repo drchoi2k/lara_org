@@ -81,7 +81,7 @@ class UserController extends Controller
 
     // U전체 출력   
         // $users = DB::table('users')->get();
-        $users =DB::table('users')->paginate(5);
+        $users =DB::table('users')->paginate(3);
         // $roles = DB::table('roles')->select('name')->get();
         // dump($roles);
         // $email = DB::table('users')->select('email')->get();
@@ -89,6 +89,7 @@ class UserController extends Controller
         // return view('board.all_list', ['users' => $users, 'roles' => $roles]);        
 
     }
+
     public function xedb()
     {
     	$dbdata =DB::table('xe_files')->paginate(2000);
