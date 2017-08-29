@@ -92,7 +92,7 @@ class UserController extends Controller
 
     public function xedb()
     {
-    	$dbdata =DB::table('xe_files')->paginate(2000);
+    	$dbdata =DB::table('xe_menu_item')->paginate(2000);
     	return view('board.xedb', compact('dbdata'));
 	}
 

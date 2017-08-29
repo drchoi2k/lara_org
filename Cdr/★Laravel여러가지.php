@@ -179,7 +179,27 @@ return view('union.union', compact('union'));
 	@endforeach
 </table>
 
+//pagination
+// UserController
+ public function xedb()
+    {
+        $dbdata =DB::table('xe_menu_item')->paginate(2000);
+        return view('board.xedb', compact('dbdata'));
+    }
 
+
+<body>
+        <h1>DataBase 목 록</h1>
+        <table class="list">
+            @foreach($dbdata as $un)
+            <tr>
+                <td>{{ $un -> menu_item_srl }} </td>
+            </tr>
+            @endforeach
+        </table>
+        <hr>
+    <ul class="posi">{{ $dbdata -> render() }}</ul>
+</body>
 
 
 
