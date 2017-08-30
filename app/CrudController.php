@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Role;
 use App\User;
-
 class CrudController extends Controller
 {
     public function getInsert()
@@ -28,12 +27,12 @@ class CrudController extends Controller
     {
     	$user = User::find($id);
     	$roles = Role::all();
-    	return view('user.getEdit', compact('user','roles'));
+    	return view('user.getEdit', compact('user', 'roles'));
     }
 
     public function postUpdate(Request $r, $id)
     {
-    	$password = $r->password;
+    	$password = $r ->password;
     	$user = User::find($id);
     	if ($password !="")
     	{
@@ -44,7 +43,7 @@ class CrudController extends Controller
     		$user->name = $r->name;
     		$user->email = $r->email;
     	}
-    		$user->save();
+    		$user ->save();
     		return redirect('pagination');
     }
 }

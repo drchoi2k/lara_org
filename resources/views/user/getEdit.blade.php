@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Pagination</title>
+		<title>Insert</title>
 		<style type="text/css">
-		.pagination li{
-				display: inline;
-				float: left;
+			html, body{
+				width: 600px;
+				margin: 0 auto;
 				padding: 10px;
-					background: #ddd;
 			}
-		table tr > td, tr> th{
-			border: 1px solid #ddd
-			padding 2px;
-		}
+			.container{
+				background: #ddd;
+				box-shadow: 0 0 10px gray;
+			}
+			h1 {
+				margin: 15px 0 0 39px;
+			}
 		</style>
 	</head>
 	<body>
-		<H1>PAGINATION lARAVEL</H1>
-		<h4><a href="{{ url('getInsert') }}">NEW User</a></h4>
-		<table>
-			<tr>
-				<th>N<sup>o</sup></th>
-				<th>ID</th>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Created</th>
-				<th>Updated</th>
-			</tr>
-			@foreach($users as $key => $u)
-			<tr>
-				<td>{{ $key + $users->firstItem() }}</td>
-				<td>{{ $u->id }}</td>
-				<td>{{ $u->name }} </td>
-				<td>{{ $u->email }} </td>
-				<td>{{ $u->create_at }} </td>
-				<td>{{ $u->update_at }} </td>
-				<td><a href="{{ url('getEdit',array($u-id)) }}">Edit</a></td>
-				<td><a href="#">Delete</a></td>
-			</tr>
-			@endforeach
-		</table>
-		<<h1>{{ $users ->total() }} </h1>
-		<hr>
-		{{ $users -> links() }}
+		<div class="container">
+			<h1> New User Edit </h1>
+			<hr>
+			<form action="{{ url('postInsert', array($user->id)) }}" method="POST">
+				{{ csrf_field() }}
+				<table>
+					<tr>
+						<td>Name</td>
+						<td>
+							<input type="text" name="name" id="name" value="{{ $user->name }}">
+						</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>
+							<input type="email" name="email" id="email" value="{{ $user->email }}">
+						</td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td>
+							<input type="password" name="password" id="password">
+						</td>
+					</tr>
+					<tr>
+						<td>Role</td>
+						<td>
+							<select name="role_id" id="role_id">
+								@foreach($roles as $role)
+								<option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected': null}}>{{ $role->name }}</option>
+								@endforeach
+							</select>
+						</td>
+					</tr>
+				</table>
+				<td>
+					<hr>
+					<input type="submit" name="submit">
+				</td>
+			</form>
+		</div>
 	</body>
 </html>

@@ -33,14 +33,16 @@
 				<td>{{ $u->id }}</td>
 				<td>{{ $u->name }} </td>
 				<td>{{ $u->email }} </td>
-				<td>{{ $u->create_at }} </td>
-				<td>{{ $u->update_at }} </td>
-				<td><a href="{{ url('getEdit',array($u->id)) }}">Edit</a></td>
-				<td><a href="#">Delete</a></td>
+			
+				<td>
+					<a href="{{ url('getEdit', array($u -> id)) }}">Edit</a>
+
+					<a href="#">Delete</a>
+				</td>
 			</tr>
 			@endforeach
 		</table>
-		<<h1>{{ $users ->total() }} </h1>
+		<h1>{{ $users ->total() }} </h1>
 		<hr>
 		{{ $users -> links() }}
 	</body>

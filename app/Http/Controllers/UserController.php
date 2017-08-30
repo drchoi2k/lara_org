@@ -115,4 +115,16 @@ class UserController extends Controller
         // return back();  
         return redirect('pagination'); 
     }
+
+    public function getEdit($id)
+    {
+        $user = User::find($id);
+        $roles = Role::all();
+        return view('user.getEdit', compact('user', 'roles'));
+    }
+
+
+
+
+
 }	

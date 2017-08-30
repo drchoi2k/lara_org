@@ -28,8 +28,8 @@ Route::get('/pagination','PaginationController@pagination');
 Route::get('/xedb','UserController@xedb');
 Route::get('/getInsert','CrudController@getInsert');
 Route::post('/postInsert','CrudController@postInsert');
-Route::get('/getEdit', 'CrudController@getEdit');
-
+Route::get('/getEdit{id}', 'CrudController@getEdit');
+Route::post('/postUpdate','CrudController@postInsert');
 
 
 // Route::get('/getuser/{id}','UserController@getuser');
