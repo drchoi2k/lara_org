@@ -112,7 +112,7 @@ class UserController extends Controller
                       'email'=>$r->email,
                       'password'=>bcrypt($r->password),
                       'role_id'=>$r->role_id]);
-        return back();  
-        // return redirect('pagination'); 
+        // return back();  
+        return redirect('pagination'); 
     }
 }	

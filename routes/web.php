@@ -26,8 +26,11 @@ Route::get('/union','UserController@union');
 Route::get('/all_list','UserController@all_list');
 Route::get('/pagination','PaginationController@pagination');
 Route::get('/xedb','UserController@xedb');
-Route::get('/getInsert','UserController@getInsert');
-Route::post('/postInsert','UserController@postInsert');
+Route::get('/getInsert','CrudController@getInsert');
+Route::post('/postInsert','CrudController@postInsert');
+Route::get('/getEdit', 'CrudController@getEdit');
+
+
 
 // Route::get('/getuser/{id}','UserController@getuser');
 // 1방법
