@@ -36,7 +36,6 @@
 			
 				<td>
 					<a href="{{ url('getEdit', array($u -> id)) }}">Edit</a>
-
 					<a href="#">Delete</a>
 				</td>
 			</tr>
