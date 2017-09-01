@@ -26,7 +26,7 @@ class CrudController extends Controller
 
     public function getEdit($id)
     {
-    	$user = User::find($id);
+    	 $user = User::find($id);
     	$roles = Role::all();
     	return view('user.getEdit', compact('user','roles'));
     }
@@ -40,9 +40,11 @@ class CrudController extends Controller
     		$user->name = $r->name;
     		$user->email = $r->email;
     		$user->password = $r->password;
+            $user->role_id = $r->role_id;
     	} else {
     		$user->name = $r->name;
     		$user->email = $r->email;
+            $user->role_id = $r->role_id;
     	}
     		$user->save();
     		return redirect('pagination');

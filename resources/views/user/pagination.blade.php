@@ -24,8 +24,9 @@
 				<th>ID</th>
 				<th>Name</th>
 				<th>Email</th>
-				<th>Created</th>
-				<th>Updated</th>
+				<th>Role</th>
+				<th>Action</th>
+
 			</tr>
 			@foreach($users as $key => $u)
 			<tr>
@@ -33,7 +34,7 @@
 				<td>{{ $u->id }}</td>
 				<td>{{ $u->name }} </td>
 				<td>{{ $u->email }} </td>
-			
+				<td>{{ $u->rolename }} </td>
 				<td>
 					<a href="{{ url('getEdit', array($u -> id)) }}">Edit</a>
 					<a href="#">Delete</a>

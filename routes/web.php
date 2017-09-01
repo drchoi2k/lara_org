@@ -19,6 +19,8 @@
 //     'uses' => 'WelcomeController@index',
 // ]);
 
+
+ 
 Route::get('/','UserController@index');
 Route::get('/aws','UserController@aws');
 Route::get('/getuser','UserController@getuser');
@@ -28,8 +30,9 @@ Route::get('/pagination','PaginationController@pagination');
 Route::get('/xedb','UserController@xedb');
 Route::get('/getInsert','CrudController@getInsert');
 Route::post('/postInsert','CrudController@postInsert');
-Route::get('/getEdit{id}', 'CrudController@getEdit');
-Route::post('/postUpdate','CrudController@postInsert');
+
+Route::get('/getEdit/{id}', 'CrudController@getEdit');
+Route::post('/postUpdate/{id}','CrudController@postUpdate');
 
 
 // Route::get('/getuser/{id}','UserController@getuser');

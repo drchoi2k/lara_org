@@ -21,7 +21,7 @@
 		<div class="container">
 			<h1> New User Edit </h1>
 			<hr>
-			<form action="{{ url('postInsert', array($user->id)) }}" method="POST">
+			<form action="{{ url('postUpdate', array($user->id)) }}" method="POST">
 				{{ csrf_field() }}
 				<table>
 					<tr>
