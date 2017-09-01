@@ -3,22 +3,34 @@
 	<head>
 		<title>Pagination</title>
 		<style type="text/css">
+		html, body{
+				width: 600px;
+				margin: 0 auto;
+				padding: 10px;
+
+			}
+		table tr > td, tr> th{
+			border: 1px solid #fff
+			padding 2px;
+			}
 		.pagination li{
 				display: inline;
 				float: left;
 				padding: 10px;
-					background: #ddd;
+				background: #fff;
 			}
-		table tr > td, tr> th{
-			border: 1px solid #ddd
-			padding 2px;
-		}
+		.container{
+				background: #ddd;
+				box-shadow: 0 0 5px gray;
+				padding: 30px ;
+			}
+		
 		</style>
 	</head>
 	<body>
-		<H1>PAGINATION lARAVEL</H1>
+		<H1>PAGINATION LARAVEL</H1>
 		<h4><a href="{{ url('getInsert') }}">NEW User</a></h4>
-		<table>
+		<table class="container">
 			<tr>
 				<th>N<sup>o</sup></th>
 				<th>ID</th>
