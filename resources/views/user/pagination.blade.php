@@ -22,7 +22,7 @@
 		.container{
 				background: #ddd;
 				box-shadow: 0 0 5px gray;
-				padding: 30px ;
+				padding: 30px;
 			}
 		
 		</style>
@@ -32,12 +32,12 @@
 		<h4><a href="{{ url('getInsert') }}">NEW User</a></h4>
 		<table class="container">
 			<tr>
-				<th>N<sup>o</sup></th>
+				<th>N<sdn>o</sdn></th>
 				<th>ID</th>
 				<th>Name</th>
 				<th>Email</th>
 				<th>Role</th>
-				<th>Action</th>
+				<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</th>
 
 			</tr>
 			@foreach($users as $key => $u)
@@ -48,6 +48,7 @@
 				<td>{{ $u->email }} </td>
 				<td>{{ $u->rolename }} </td>
 				<td>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="{{ url('getEdit', array($u -> id)) }}">수정</a>
 					<!--web.php: get -->
 					<a href="{{ url('postDelete',[$u->id]) }}" onclick="return confirm('삭제하겠습니까?')">삭제</a>

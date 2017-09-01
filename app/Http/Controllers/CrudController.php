@@ -20,7 +20,7 @@ class CrudController extends Controller
     				  'email'=>$r->email,
     				  'password'=>bcrypt($r->password),
     				  'role_id'=>$r->role_id]);
-    	// return back();  
+    	 // return back();  
     	return redirect('pagination'); 
     }
 
@@ -53,7 +53,8 @@ class CrudController extends Controller
     {
     	User::destroy($id);
     	// User::where('id',$id)->delete(); //each one to user by selft
-    	return back();
+    	   return back();
+
     }
 
 

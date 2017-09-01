@@ -122,9 +122,4 @@ class UserController extends Controller
         $roles = Role::all();
         return view('user.getEdit', compact('user', 'roles'));
     }
-
-
-
-
-
 }	
