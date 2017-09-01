@@ -49,5 +49,14 @@ class CrudController extends Controller
     		$user->save();
     		return redirect('pagination');
     }
+    public function postDelete($id)
+    {
+    	User::destroy($id);
+    	// User::where('id',$id)->delete(); //each one to user by selft
+    	return back();
+    }
+
+
+
 }
  

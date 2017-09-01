@@ -36,8 +36,14 @@
 				<td>{{ $u->email }} </td>
 				<td>{{ $u->rolename }} </td>
 				<td>
-					<a href="{{ url('getEdit', array($u -> id)) }}">Edit</a>
-					<a href="#">Delete</a>
+					<a href="{{ url('getEdit', array($u -> id)) }}">수정</a>
+					<!--web.php: get -->
+					<a href="{{ url('postDelete',[$u->id]) }}" onclick="return confirm('삭제하겠습니까?')">삭제</a>
+
+					<!--web.php:  post -->           
+					<!-- <form action="{{ url('postDelete', [$u->id]) }}" method="POST" onclick="return confirm('확실합니까?)'">{!! csrf_field() !!}
+						<input type="submit" name="Del">
+					</form> -->
 				</td>
 			</tr>
 			@endforeach

@@ -33,7 +33,7 @@ Route::post('/postInsert','CrudController@postInsert');
 
 Route::get('/getEdit/{id}', 'CrudController@getEdit');
 Route::post('/postUpdate/{id}','CrudController@postUpdate');
-
+Route::get('/postDelete/{id}','CrudController@postDelete');
 
 // Route::get('/getuser/{id}','UserController@getuser');
 // 1방법
