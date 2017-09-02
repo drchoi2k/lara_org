@@ -53,13 +53,9 @@
 				<tr>
 					<td>Role</td>
 					<td>
-						{!!Form::select('role_id',$roles, null)!!}
-						<!-- <select name="role_id" id="role_id">
-								<option value=""> </option>
-								@foreach($roles as $role)
-								<option value="{{ $role->id }}">{{ $role->name }}</option>
-								@endforeach
-						</select> -->
+						{!!Form::select('role_id',$roles->toarray(1), null)!!}
+
+			
 					</td>
 				</tr>
 			</table>
@@ -70,3 +66,6 @@
 		</div>
 	</body>
 </html>
+
+
+
