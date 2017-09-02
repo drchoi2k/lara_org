@@ -4,7 +4,7 @@
 		<title>Pagination</title>
 		<style type="text/css">
 		html, body{
-				width: 600px;
+				width: 550px;
 				margin: 0 auto;
 				padding: 10px;
 

@@ -16,6 +16,12 @@ class CrudController extends Controller
 
     public function postInsert(Request $r)
     {
+        $this ->validate($r,[
+        'name' => 'required|max:5',
+        'email' => 'required|unique:users',
+        'role_id' =>'required',
+        'password' =>'required|min:6'
+        ]);
     	user::insert(['name'=>$r->name,
     				  'email'=>$r->email,
     				  'password'=>bcrypt($r->password),

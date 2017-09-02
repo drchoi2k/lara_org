@@ -47,7 +47,8 @@
 						<td>
 							<select name="role_id" id="role_id">
 								@foreach($roles as $role)
-								<option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected': null}}>{{ $role->name }}</option>
+								<option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected': null}}>{{ $role->name }}
+								</option>
 								@endforeach
 							</select>
 						</td>
@@ -57,6 +58,7 @@
 					<hr>
 					<input type="submit" name="submit">
 				</td>
+
 			</form>
 		</div>
 	</body>
