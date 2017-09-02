@@ -201,8 +201,10 @@ return view('union.union', compact('union'));
     <ul class="posi">{{ $dbdata -> render() }}</ul>
 </body>
 
-
-
-
+// Form, Html 클래스 
+composer require laravelcollective/html    //download
+Collective\Html\HtmlServiceProvider::class,    // config/app.php 'provider'에 추가
+'Form' => Collective\Html\FormFacade::class,   // config/app.php 'aliases'에 추가
+'Html' => Collective\Html\HtmlFacade::class,   // config/app.php 'aliases'에 추가
 
 

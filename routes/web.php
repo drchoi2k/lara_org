@@ -28,6 +28,7 @@ Route::get('/union','UserController@union');
 Route::get('/all_list','UserController@all_list');
 Route::get('/pagination','PaginationController@pagination');
 Route::get('/xedb','UserController@xedb');
+
 Route::get('/getInsert','CrudController@getInsert');
 Route::post('/postInsert','CrudController@postInsert');
 

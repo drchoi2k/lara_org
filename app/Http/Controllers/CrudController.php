@@ -28,12 +28,13 @@ class CrudController extends Controller
     				  'role_id'=>$r->role_id]);
     	 // return back();  
     	return redirect('pagination'); 
-    }
+    // }
 
     public function getEdit($id)
-    {
-    	 $user = User::find($id);
-    	$roles = Role::all();
+    { 
+    	$user = User::find($id);
+    	// $roles = Role::all();
+        $roles = Role::pluck('name','id');
     	return view('user.getEdit', compact('user','roles'));
     }
 

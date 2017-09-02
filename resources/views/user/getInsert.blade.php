@@ -25,7 +25,7 @@
 	<body>
 		<div class="container">
 			<h1> New User Insert </h1>
-			@if ($errors->any())
+			<!-- @if ($errors->any())
 				<div class="alert-danger">
 					<ul>
 						@foreach ($errors->all() as $error)
@@ -33,10 +33,15 @@
 						@endforeach
 					</ul>
 				</div>
-				@endif
+				@endif -->
 			
 			
 			<hr>
+			
+			{!! Form::open() !!}
+
+			{!! Form::close() !!}
+
 			<form action="{{ url('postInsert') }}" method="POST">
 				{{ csrf_field() }}
 				<table>
