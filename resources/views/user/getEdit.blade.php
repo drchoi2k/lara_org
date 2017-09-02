@@ -53,7 +53,7 @@
 				<tr>
 					<td>Role</td>
 					<td>
-						{!!Form::select('role_id',$roles->toarray(1), null)!!}
+						{!!Form::select('role_id',$roles->toarray(), null)!!}
 
 			
 					</td>
