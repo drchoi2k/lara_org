@@ -11,5 +11,13 @@ class JqueryController extends Controller
     {
 
     	return view('jquery.jquery',['roles'=>Role::pluck('name','id')]);
-    }	
+    }
+
+    public function postJquery(Request $r)	
+    {
+    	if ($r->ajax())
+    	{
+    		dump($r->all());
+    	}
+    }
 }
