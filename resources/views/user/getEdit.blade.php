@@ -19,6 +19,10 @@
 				border: 1px solid;
 				background: #888;
 			}
+			input[type='submit']{
+				border: 2px solid;
+				background: #ddd;
+			}
 		</style>
 	</head>
 	<body>
@@ -53,9 +57,8 @@
 				<tr>
 					<td>Role</td>
 					<td>
-						{!!Form::select('role_id',$roles->toarray(), null)!!}
-
-			
+						<!-- {!!Form::select('role_id',$roles, null)!!} -->
+						{!!Form::select('role_id',$roles,null,['id'=>'role_id']) !!}
 					</td>
 				</tr>
 			</table>

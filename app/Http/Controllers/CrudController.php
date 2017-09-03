@@ -34,6 +34,8 @@ class CrudController extends Controller
     { 
     	$user = User::find($id);
     	// $roles = Role::all();
+        
+        
         $roles = Role::pluck('name','id');
     	return view('user.getEdit', compact('user','roles'));
     }
@@ -63,8 +65,5 @@ class CrudController extends Controller
     	   return back();
 
     }
-
-
-
 }
  

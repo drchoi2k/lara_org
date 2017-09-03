@@ -36,6 +36,11 @@ Route::get('/getEdit/{id}', 'CrudController@getEdit');
 Route::post('/postUpdate/{id}','CrudController@postUpdate');
 Route::get('/postDelete/{id}','CrudController@postDelete');
 
+//   ------ Jquery
+Route::get('/jquery','JqueryController@jquery');
+
+
+
 // Route::get('/getuser/{id}','UserController@getuser');
 // 1방법
 // Route::get('/aws', [
