@@ -16,8 +16,7 @@
 			<td>{{ $u->email }}</td>
 			<td>{{ $u->rolename }}</td>
 			<td>
-				<a href="#">Edit</a>
-				<!-- <a href="{{ url('deleteByAjax', $u->id)}}" class="btn btn-danger btn-sm btn-dell">삭 제</a> -->
+				<button value="{{$u->id}}" class="btn btn-primary btn-sm btn-edit">수 정</button>
 				<button value="{{$u->id}}" class="btn btn-danger btn-sm btn-dell">삭 제</button>
 			</td>
 		</tr>

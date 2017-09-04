@@ -47,5 +47,11 @@ class JqueryController extends Controller
     	    return response(['id'=>$r->id]);
     	    }		
 		}
-
+	public function getEditAjax(Request $r)
+		{
+			if ($r->ajax())
+			{
+				return response(user::find($r));
+			}
+		}
 }

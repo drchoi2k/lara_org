@@ -58,6 +58,7 @@
 				</div>
 			</div>
 		</div>
+		@include('jquery.update')
 		<script type="text/javascript">
 
 		$(document).ready(function(){
@@ -84,6 +85,7 @@
 					}
 				})
 			});
+			//--------------------------------------------------
 			$(document).on('click','.btn-dell',function(e){
 				var id = $(this).val();
 				$.ajax({
@@ -94,6 +96,26 @@
 					success:function(data)
 					{
 						$('tbody tr.id'+id).remove();
+					}
+				})
+			})
+			//--------------------------------------------------
+			$(document).on('click','.btn-edit',function(e){
+				var id = $(this).val();
+				$.ajax({
+					type : 'get',
+					url  : "{{ url('getEditAjax') }}",
+					data : {id:id},
+					success:function(data)
+					{
+						
+						var frmupdate = $('#frm-update');
+						frmupdate.find('#name').val(data.name);
+						frmupdate.find('#email').val(data.email);
+						frmupdate.find('#role_id').val(data.role_id);
+						$('#popup-update').modal('show');
+						 alert(data.msg);
+						// console.log(data);
 					}
 				})
 			})

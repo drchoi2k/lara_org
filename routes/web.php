@@ -40,7 +40,7 @@ Route::get('/postDelete/{id}','CrudController@postDelete');
 Route::get('/jquery','JqueryController@jquery');
 Route::post('/postJquery','JqueryController@postJquery');
 Route::get('/readByAjax','JqueryController@readByAjax');
-Route::post('/deleteByAjax','JqueryController@deleteByAjax');
+Route::get('/getEditAjax','JqueryController@getEditAjax');
 
 
 // Route::get('/getuser/{id}','UserController@getuser');
