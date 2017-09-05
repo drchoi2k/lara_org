@@ -39,7 +39,7 @@ class JqueryController extends Controller
     			->get();
     		return view('jquery.readByAjax', compact('users'));
     	}
-    public function deleteByAjax(Request $r)
+    public function deleteByAjax($id)
     	{
     		if ($r->ajax())
     		{

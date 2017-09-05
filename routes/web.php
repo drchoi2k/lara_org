@@ -41,7 +41,7 @@ Route::get('/jquery','JqueryController@jquery');
 Route::post('/postJquery','JqueryController@postJquery');
 Route::get('/readByAjax','JqueryController@readByAjax');
 Route::get('/getEditAjax','JqueryController@getEditAjax');
-
+Route::post('/deleteByAjax','JqueryController@deleteByAjax');
 
 // Route::get('/getuser/{id}','UserController@getuser');
 // 1방법
