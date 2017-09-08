@@ -26,15 +26,12 @@ class CrudController extends Controller
     				  'email'=>$r->email,
     				  'password'=>bcrypt($r->password),
     				  'role_id'=>$r->role_id]);
-    	 // return back();  
     	return redirect('pagination'); 
-    // }
-
+   
     public function getEdit($id)
     { 
     	$user = User::find($id);
-    	// $roles = Role::all();
-        
+    	// $roles = Role::all();        
         
         $roles = Role::pluck('name','id');
     	return view('user.getEdit', compact('user','roles'));
